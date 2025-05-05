@@ -1,0 +1,262 @@
+.onama-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.onama-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+    color: white;
+    background: url("onama-hero.jpg") no-repeat center center/cover;
+}
+
+.onama-hero h1 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.onama-hero h2 {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.about-us-section {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.about-us-section .about-left {
+    flex: 1;
+    padding-left: 60px;
+}
+
+.about-us-section .about-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    min-width: 500px;
+}
+
+.about-us-section .about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.about-us-section .about-right h2 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.about-us-section .about-right p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    padding-right: 40px;
+}
+
+.about-us-section .about-right button {
+    align-self: flex-start;
+    font-size: 18px;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    padding: 10px 20px;
+    transition: 0.2s ease;
+}
+
+.about-us-section .about-right button:hover {
+    background-color: var(--text-color);
+    color: white;
+}
+
+.sto-nudimo h2 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.sto-nudimo-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sto-nudimo-card-container>* {
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px;
+    min-width: 300px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sto-nudimo-card-container>* .card-icon {
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.sto-nudimo-card-container>* h4 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.sto-nudimo-card-container>* .onama-card-desc {
+    margin-bottom: 10px;
+}
+
+.sto-nudimo-card-container>* ul {
+    padding-left: 14px;
+
+}
+
+.sto-nudimo-card-container>* ul li {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+
+/* Contact Form styles! */
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Typography */
+.contact-form__title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.contact-form__subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Form Elements */
+.contact-form__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form__row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.contact-form__group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form__label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    outline: none;
+    border-color: #bf4da4;
+    box-shadow: 0 0 0 2px rgba(191, 77, 164, 0.2);
+}
+
+.contact-form__textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit Button */
+.contact-form__submit {
+    background-color: #bf4da4;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.contact-form__submit:hover {
+    background-color: #a53a8a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-form__row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-form__title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .contact-form__title {
+        font-size: 1.5rem;
+    }
+
+    .contact-form__submit {
+        width: 100%;
+    }
+}

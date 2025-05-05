@@ -1,0 +1,299 @@
+.vjencanja-container {
+    max-width: 1500px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.vjencanja-hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('bride-hero.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+.vjencanja-hero h1 {
+    font-size: 52px;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.vjencanja-hero h2 {
+    text-align: center;
+    width: 60%;
+    font-weight: 500;
+}
+
+.blog-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.blog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (min-width: 768px) {
+    .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+}
+
+.vjencanja-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+}
+
+.vjencanja-card:hover {
+    box-shadow: 0 4px 8px var(--color-primary);
+    cursor: pointer;
+}
+
+.vjencanja-card .vjencanja-card-top img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+
+}
+
+.vjencanja-card .vjencanja-card-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.vjencanja-card .vjencanja-card-top .vjencanja-meta h2 {
+    font-weight: 500;
+}
+
+.vjencanja-card .vjencanja-card-button {
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    gap: 6px;
+    align-items: end;
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.vjencanja-card .vjencanja-card-button:hover {
+    color: var(--color-primary);
+}
+
+.vjencanja-card .underline {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+}
+
+
+
+
+
+/* Imported styles from V0 */
+/* Base styles */
+.vjencanja-page-cta {
+    width: 100%;
+    padding: 3rem 0;
+}
+
+.vjencanja-page-cta__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.vjencanja-page-cta__card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #bf4da4;
+}
+
+/* Decorative elements */
+.vjencanja-page-cta__decorative {
+    position: absolute;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 9999px;
+    background-color: rgba(191, 77, 164, 0.05);
+    filter: blur(80px);
+}
+
+.vjencanja-page-cta__decorative--top {
+    top: 0;
+    right: 0;
+}
+
+.vjencanja-page-cta__decorative--bottom {
+    bottom: 0;
+    left: 0;
+}
+
+.vjencanja-page-cta__accent-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.25rem;
+    width: 100%;
+    background: linear-gradient(to right, #bf4da4, rgba(191, 77, 164, 0.7), transparent);
+}
+
+/* Content styles */
+.vjencanja-page-cta__content {
+    position: relative;
+    z-index: 10;
+}
+
+.vjencanja-page-cta__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background-color: rgba(191, 77, 164, 0.1);
+    padding: 0.375rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #bf4da4;
+    margin-bottom: 1rem;
+}
+
+.vjencanja-page-cta__icon {
+    height: 1rem;
+    width: 1rem;
+}
+
+.vjencanja-page-cta__heading {
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111827;
+}
+
+.vjencanja-page-cta__highlight {
+    color: #bf4da4;
+}
+
+.vjencanja-page-cta__description {
+    margin-bottom: 2rem;
+    max-width: 800px;
+    color: #4b5563;
+    font-size: 1rem;
+}
+
+/* Button styles */
+.vjencanja-page-cta__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.vjencanja-page-cta__button {
+    display: inline-flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    padding: 0 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.vjencanja-page-cta__button--primary {
+    background-color: #bf4da4;
+    color: white;
+}
+
+.vjencanja-page-cta__button--primary:hover {
+    background-color: rgba(191, 77, 164, 0.9);
+}
+
+.vjencanja-page-cta__button--primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #bf4da4;
+}
+
+.vjencanja-page-cta__button--secondary {
+    border: 1px solid #e5e7eb;
+    background-color: transparent;
+    color: #111827;
+}
+
+.vjencanja-page-cta__button--secondary:hover {
+    background-color: #f3f4f6;
+}
+
+.vjencanja-page-cta__button--secondary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #d1d5db;
+}
+
+.vjencanja-page-cta__button-icon {
+    margin-left: 0.5rem;
+    height: 1rem;
+    width: 1rem;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .vjencanja-page-cta {
+        padding: 6rem 0;
+    }
+
+    .vjencanja-page-cta__container {
+        padding: 0 1.5rem;
+    }
+
+    .vjencanja-page-cta__card {
+        padding: 3rem;
+    }
+
+    .vjencanja-page-cta__heading {
+        font-size: 2.25rem;
+    }
+
+    .vjencanja-page-cta__description {
+        font-size: 1.125rem;
+    }
+
+    .vjencanja-page-cta__buttons {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .vjencanja-page-cta__heading {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,185 @@
+.blog-container {
+    max-width: 1500px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.blog-container h1 {
+    font-size: 45px;
+    margin-bottom: 6px;
+    margin-top: 16px;
+    font-weight: 500;
+}
+
+.blog-container h2 {
+    font-size: 30px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    padding-left: 12px;
+}
+
+.blog-container h3 {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.blog-container input {
+    width: 60%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    outline: 2px solid var(--text-color-light);
+    transition: 0.2s ease;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-container input:focus {
+    outline: 1px solid var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+.blog-container input::placeholder {
+    color: var(--text-color-light);
+}
+
+.blog-container .blog-categories {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-container .blog-categories .category {
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.blog-container .blog-categories .category:hover {
+    color: var(--color-primary);
+
+}
+
+.blog-container .blog-categories .category.active-cat {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.blog-container .blog-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.blog-container .blog-card-container .blog-card {
+    display: flex;
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.blog-container .blog-card-container .blog-card:hover img {
+    transform: scale(1.01);
+    transition: 0.2s ease
+}
+
+.blog-container .blog-card-container .blog-card:hover {
+    box-shadow: 0 4px 18px var(--color-primary);
+}
+
+
+.blog-container .blog-card-container .blog-card img {
+    flex: 0.1;
+    min-width: 450px;
+    height: 400px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.blog-container .blog-card-container .blog-card .blog-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+.blog-container .blog-card-container .blog-card .blog-content .blog-cat-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    background-color: lightgray;
+    width: fit-content;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.blog-container .blog-card-container .blog-card .blog-content .blog-title {
+    padding: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: black;
+}
+
+.blog-container .blog-card-container .blog-card .blog-content .read-more-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.blog-container .blog-card-container .blog-card .blog-content .meta-tags {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.blog-container .blog-card-container .blog-card .blog-content .meta-tags>* {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blog-container .vjencanja-blog-cta {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #F9EFF7;
+    border-radius: 12px;
+}
+
+.blog-container .vjencanja-blog-cta h2 {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.blog-container .vjencanja-blog-cta p {
+    font-size: 20px;
+    color: var(--text-color);
+    padding-right: 40px;
+}

@@ -1,0 +1,318 @@
+.home-container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.hero-section {
+    width: 100%;
+    height: 90vh;
+    background: url("/tvornica-naslovna.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-attachment: fixed;
+}
+
+.hero-section h1 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hero-section h4 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.featured-blogs .featured-blog-card-container {
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.featured-blogs h1,
+.featured-brands h1 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.featured-blogs h3,
+.featured-brands h3 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.featured-blog-card-container .featured-blog-card {
+    width: 360px;
+    height: fit-content;
+    padding: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.featured-blog-card-container .featured-blog-card .featured-blog-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.featured-blog-card-container .featured-blog-card .meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+    align-items: center;
+}
+
+.featured-blog-card-container .featured-blog-card .meta>* {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.featured-blog-card-container .featured-blog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+.featured-blog-card-container .featured-blog-card:hover img {
+    transform: scale(1.02);
+}
+
+.featured-blog-card-container .featured-blog-card .featured-blog-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+}
+
+.featured-blog-card-container .featured-blog-card .read-more {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: 0.2s ease;
+}
+
+.featured-blog-card-container .featured-blog-card .read-more:hover {
+    color: var(--color-secondary);
+}
+
+.featured-brands .featured-brands-carousel-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 1500px;
+    width: 78%;
+    padding: 20px 0;
+    scrollbar-width: thin;
+    align-self: center;
+    justify-self: center;
+    scrollbar-color: #888 transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.featured-brands .featured-brands-carousel-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.featured-brands .featured-brands-carousel-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 3px;
+}
+
+.featured-brands .featured-brands-carousel-container .featured-brands-card {
+    flex: 0 0 350px;
+    height: 300px;
+    scroll-snap-align: start;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.featured-brands .featured-brands-carousel-container .featured-brands-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    /* Specify property for transition */
+}
+
+.featured-brands .featured-brands-carousel-container .featured-brands-card img:hover {
+    transform: scale(1.02);
+    /* Specify property for hover effect */
+}
+
+.featured-brands .featured-brands-carousel-container .featured-brands-card .brand-name {
+    position: absolute;
+    top: 260px;
+    left: 20px;
+    color: white;
+    opacity: 0.7;
+    font-size: 18px;
+}
+
+.about-us-section {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.about-us-section .about-left {
+    flex: 0.8;
+    padding-left: 60px;
+}
+
+.about-us-section .about-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    min-width: 500px;
+}
+
+.about-us-section .about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.about-us-section .about-right h2 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.about-us-section .about-right p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    padding-right: 40px;
+}
+
+.about-us-section .about-right button {
+    align-self: flex-start;
+    font-size: 18px;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    padding: 10px 20px;
+    transition: 0.2s ease;
+}
+
+.about-us-section .about-right button:hover {
+    background-color: var(--text-color);
+    color: white;
+}
+
+.vjencanja-cta-container {
+    display: flex;
+    width: 100%;
+    max-height: 400px;
+    height: 400px;
+    flex-wrap: wrap;
+}
+
+.vjencanja-cta-container .vjencanja-cta-image {
+    flex: 0.5;
+    height: 100%;
+    border-radius: 12px;
+
+}
+
+.vjencanja-cta-container .vjencanja-cta-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.vjencanja-cta-container .vjencanja-cta-content {
+    flex: 1;
+    padding: 30px;
+    background: linear-gradient(to right, #e96acb, #e8a8d3);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.vjencanja-cta-container .vjencanja-cta-content h2 {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.vjencanja-cta-container .vjencanja-cta-content p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.vjencanja-cta-container .vjencanja-cta-content button {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.visit-on-facebook {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.visit-on-facebook .visit-content {
+    width: 100%;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: url("/visit-on-facebook.jpg") no-repeat center center/cover;
+}
+
+.visit-on-facebook .visit-content h2 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.visit-on-facebook .visit-content p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: white;
+}
