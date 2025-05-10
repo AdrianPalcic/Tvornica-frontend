@@ -16,10 +16,10 @@ const TransparentHeader = () => {
                     Naslovna
                 </NavLink>
                 <NavLink
-                    to="/about"
+                    to="/ponude"
                     className={({ isActive }) => isActive ? 'active' : ''}
                 >
-                    O nama
+                    Ponude
                 </NavLink>
                 <NavLink
                     to="/blog"
@@ -34,14 +34,25 @@ const TransparentHeader = () => {
                     Vjencanja
                 </NavLink>
                 <NavLink
-                    to="/ponude"
+                    to="/about"
                     className={({ isActive }) => isActive ? 'active' : ''}
                 >
-                    Ponude
+                    O nama
                 </NavLink>
                 <NavLink
-                    to="/contact"
+                    to="/about#contact"
                     className={({ isActive }) => isActive ? 'active' : ''}
+                    onClick={(e) => {
+                        if (window.location.pathname === '/about') {
+                            e.preventDefault();
+                            const contactSection = document.getElementById('contact');
+                            if (contactSection) {
+                                contactSection.scrollIntoView({ behavior: 'smooth' });
+                                // Update URL without page reload
+                                window.history.pushState({}, '', '#contact');
+                            }
+                        }
+                    }}
                 >
                     Kontakt
                 </NavLink>

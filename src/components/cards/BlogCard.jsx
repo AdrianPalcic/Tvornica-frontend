@@ -2,9 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, Pen } from 'lucide-react'
 
-const BlogCard = ({ title, image, date, tags, excerpt, author }) => {
+const BlogCard = ({ title, image, date, tags, excerpt, author, id }) => {
+
+
     return (
-        <Link className="blog-card">
+        <Link to={`/blog/${id}`} className="blog-card">
             <img src={image} alt="Blog Post" className="blog-image" />
             <div className="blog-content">
                 <div className="blog-cat-label">{tags}</div>

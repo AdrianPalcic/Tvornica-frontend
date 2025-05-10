@@ -6,10 +6,12 @@ import "../css/PonudePage.css/Ponude.css";
 import PonudeBlogCTA from "../components/Ponude.components/PonudeBlogCTA";
 import Footer from '../components/Footer';
 import useFetch from '../hook/useFetch';
+import { useLocation } from "react-router-dom";
 
 const Ponude = () => {
     const API_URL = import.meta.env.VITE_API_URL;
     const { loading, error, data } = useFetch(`http://tvornica-backend.local/wp-json/wp/v2/posts?categories=7&_embed`)
+    const location = useLocation()
 
     const [isLoading, setIsLoading] = useState(false);
     const [visibleCards, setVisibleCards] = useState(9);
@@ -19,6 +21,15 @@ const Ponude = () => {
         location: '',
         category: '',
     })
+
+    useEffect(() => {
+        if (location.state?.preselectedCategory) {
+            setFilters({
+                location: '',
+                category: location.state?.preselectedCategory
+            })
+        }
+    }, [location.state])
 
     const sortedBrands = useMemo(() => {
         if (!data) return [];
@@ -124,6 +135,7 @@ const Ponude = () => {
                         {filteredBrands.slice(0, visibleCards).map((brand) => (
                             <PonudeCard
                                 key={brand.id}
+                                id={brand.id}
                                 title={brand.title.rendered}
                                 image={brand._embedded?.['wp:featuredmedia']?.[0]?.source_url}
                             />

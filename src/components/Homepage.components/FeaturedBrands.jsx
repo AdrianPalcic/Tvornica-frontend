@@ -30,6 +30,7 @@ const FeaturedBrands = () => {
                         return (
                             <FeaturedBrandsCard
                                 key={post.id}
+                                id={post.id}
                                 title={post.title.rendered}
                                 image={featuredImage}
                             />

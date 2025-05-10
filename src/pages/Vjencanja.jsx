@@ -42,6 +42,7 @@ const Vjencanja = () => {
 
                         return (
                             <VjencanjaCard
+                                id={post.id}
                                 key={post.id}
                                 title={tags}
                                 image={featuredImage}

@@ -2,7 +2,7 @@ import { ChevronRight } from 'lucide-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const VjencanjaCard = ({ title, image, date, excerpt }) => {
+const VjencanjaCard = ({ title, image, date, excerpt, id }) => {
     return (
         <div>
             <div className="vjencanja-card">
@@ -17,7 +17,7 @@ const VjencanjaCard = ({ title, image, date, excerpt }) => {
                     <p>{excerpt}</p>
                 </div>
                 <div className="underline"></div>
-                <Link to="/" className="vjencanja-card-button">Pročitaj cijelu priču <ChevronRight size={18} /></Link>
+                <Link to={`/vjencanja/${id}`} className="vjencanja-card-button">Pročitaj cijelu priču <ChevronRight size={18} /></Link>
             </div>
         </div>
     )

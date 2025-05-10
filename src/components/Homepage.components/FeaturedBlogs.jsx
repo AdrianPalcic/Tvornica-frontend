@@ -29,6 +29,43 @@ const FeaturedBlogs = () => {
         return htmlDecoded.replace(/<[^>]*>/g, '').trim();
     };
 
+    /**
+ * Calculates estimated read time for WordPress blog content
+ * @param {string} htmlContent - The rendered HTML content from WordPress
+ * @param {number} [wordsPerMinute=200] - Average reading speed (words per minute)
+ * @param {number} [imageReadTime=12] - Seconds added per image (default 12s per Medium's formula)
+ * @returns {Object} - Returns {minutes, seconds, totalSeconds, text}
+ */
+    function calculateReadTime(htmlContent, wordsPerMinute = 200, imageReadTime = 12) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlContent;
+
+        const texT = tempDiv.textContent || '';
+        const wordCount = texT.trim().split(/\s+/).length;
+
+        const imageCount = tempDiv.querySelectorAll('img').length;
+
+        const wordsTime = (wordCount / wordsPerMinute) * 60;
+        const imagesTime = imageCount * imageReadTime;
+        const totalSeconds = wordsTime + imagesTime;
+
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = Math.round(totalSeconds % 60);
+
+        const roundedMinutes = minutes < 1 ? 1 : minutes; // Nikad ne moze bit 0 minuta
+        const textSuffix = roundedMinutes === 1 ? 'min read' : 'min read';
+        const text = `${roundedMinutes} ${textSuffix}`;
+
+        return {
+            minutes: roundedMinutes,
+            seconds,
+            totalSeconds,
+            text,
+            wordCount,
+            imageCount
+        };
+    }
+
     return (
         <div className="section-padding featured-blogs">
             <h1>Najnovije</h1>
@@ -42,22 +79,26 @@ const FeaturedBlogs = () => {
 
 
                     // Strip HTML tags from excerpt
-                    const excerpt = cleanExcerpt(post.excerpt.rendered);
+                    const excerpt = cleanExcerpt(post.excerpt.rendered.slice(0, 100) + "...");
                     const tags = post._embedded?.['wp:term']?.[1]?.map(tag => tag.name) || [];
                     const date = new Date(post.date).toLocaleDateString('hr-HR', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
                     });
+                    const blogContent = cleanExcerpt(post.content.rendered);
+                    const readingTime = calculateReadTime(blogContent);
 
                     return (
                         <FeaturedBlogsCard
                             key={post.id}
+                            id={post.id}
                             title={post.title.rendered}
                             image={featuredImage}
                             date={date}
                             excerpt={excerpt}
                             tags={tags}
+                            readTime={readingTime}
                         />
                     );
                 })}

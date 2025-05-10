@@ -17,10 +17,10 @@ const Header = () => {
                     Naslovna
                 </NavLink>
                 <NavLink
-                    to="/about"
+                    to="/ponude"
                     className={({ isActive }) => isActive ? 'nav-link-header active' : 'nav-link-header'}
                 >
-                    O nama
+                    Ponude
                 </NavLink>
                 <NavLink
                     to="/blog"
@@ -35,13 +35,13 @@ const Header = () => {
                     Vjencanja
                 </NavLink>
                 <NavLink
-                    to="/ponude"
+                    to="/about"
                     className={({ isActive }) => isActive ? 'nav-link-header active' : 'nav-link-header'}
                 >
-                    Ponude
+                    O nama
                 </NavLink>
                 <NavLink
-                    to="/contact"
+                    to="/about/#contact"
                     className={({ isActive }) => isActive ? 'nav-link-header active' : 'nav-link-header'}
                 >
                     Kontakt

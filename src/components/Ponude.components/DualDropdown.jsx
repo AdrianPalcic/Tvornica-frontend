@@ -87,14 +87,14 @@ const DualDropdown = ({
                         <div className="dual-dropdown__options">
                             {categories.map((item) => (
                                 <div
-                                    key={item}
+                                    key={item.id}
                                     className="dual-dropdown__option"
                                     onClick={() => {
-                                        setCategory(item);
+                                        setSelectedCategory(item.name);
                                         setIsCategoryOpen(false);
                                     }}
                                 >
-                                    {item}
+                                    {item.name}
                                 </div>
                             ))}
                         </div>

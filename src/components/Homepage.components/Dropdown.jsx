@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../../css/Homepage.css/Dropdown.css"
 
-const Dropdown = () => {
+const Dropdown = ({ tags }) => {
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -17,21 +19,18 @@ const Dropdown = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const toggleDropdown = () => setIsOpen(!isOpen);
-
-    const dropdownItems = [
-        { label: "Profile", value: "profile" },
-        { label: "Settings", value: "settings" },
-        { label: "Messages", value: "messages" },
-        { label: "Notifications", value: "notifications" },
-        { label: "Logout", value: "logout" }
-    ];
+    const handleTagSelect = (tagName) => {
+        setIsOpen(false);
+        navigate('/blog', {
+            state: { preselectedCategory: tagName }
+        });
+    };
 
     return (
         <div className="dropdown-container" ref={dropdownRef}>
             <button
                 className="dropdown-toggle"
-                onClick={toggleDropdown}
+                onClick={() => setIsOpen(!isOpen)}
                 aria-expanded={isOpen}
             >
                 Pretražite naš blog
@@ -40,16 +39,13 @@ const Dropdown = () => {
 
             {isOpen && (
                 <ul className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
-                    {dropdownItems.map((item) => (
-                        <li key={item.value}>
+                    {tags.map((tag) => (
+                        <li key={tag.id}>
                             <button
                                 className="dropdown-item"
-                                onClick={() => {
-                                    console.log("Selected:", item.value);
-                                    setIsOpen(false);
-                                }}
+                                onClick={() => handleTagSelect(tag.name)}
                             >
-                                {item.label}
+                                {tag.name}
                             </button>
                         </li>
                     ))}

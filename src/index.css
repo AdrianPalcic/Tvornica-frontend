@@ -11,9 +11,13 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Raleway", sans-serif;
-  background-color: hsl(0, 0%, 98%);
+  background-color: #FBFBFB;
   position: relative;
 }
 
@@ -63,7 +67,7 @@ span:not(.dual-dropdown__field button span) {
 }
 
 .section-padding {
-  padding: 60px 40px;
+  padding: 20px 40px;
 }
 
 footer {
@@ -107,9 +111,20 @@ footer .footer-links ul {
 
 footer .footer-links ul li {
   margin: 10px 0;
+  cursor: pointer
 }
 
-footer .footer-links ul li a {
+footer .footer-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+footer .footer-links a:hover {
+  color: var(--color-primary);
+}
+
+footer .footer-links ul li {
   font-size: 17px;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -119,7 +134,7 @@ footer .footer-links ul li a {
   list-style: none;
 }
 
-footer .footer-links ul li a:hover {
+footer .footer-links ul li:hover {
   color: var(--color-primary);
 }
 

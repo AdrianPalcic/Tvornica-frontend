@@ -30,7 +30,7 @@ const ContactForm = () => {
     };
 
     return (
-        <div className="contact-form">
+        <div className="contact-form" id="contact">
             <h2 className="contact-form__title">Kontaktirajte nas</h2>
             <p className="contact-form__subtitle">Imate pitanja? Javite nam se!</p>
 
