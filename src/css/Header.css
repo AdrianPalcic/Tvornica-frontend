@@ -56,3 +56,18 @@
 .navbar-header .navbar-links-header a:hover {
     color: var(--color-primary);
 }
+
+@media (max-width:800px) {
+    .navbar-header .navbar-links-header {
+        display: none;
+    }
+
+    .navbar-header .menu-open {
+        display: flex;
+    }
+
+    .navbar-header .navbar-logo-header img {
+        width: 60px;
+        height: 60px
+    }
+}

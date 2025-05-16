@@ -9,8 +9,8 @@ import Footer from '../components/Footer'
 
 const Vjencanja = () => {
 
-    const API_URL = import.meta.env.VITE_API_URL
-    const { loading, error, data } = useFetch(`http://tvornica-backend.local//wp-json/wp/v2/posts?categories=8&_embed`)
+    const apiUrl = import.meta.env.VITE_API_URL
+    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=8&_embed`)
 
     const posts = data?.sort((a, b) => new Date(b.date) - new Date(a.date));
 

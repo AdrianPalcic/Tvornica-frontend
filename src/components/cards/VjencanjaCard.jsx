@@ -7,7 +7,7 @@ const VjencanjaCard = ({ title, image, date, excerpt, id }) => {
         <div>
             <div className="vjencanja-card">
                 <div className="vjencanja-card-top">
-                    <img src={image} alt="Slika mlade" className="vjencanja-card-image" />
+                    <img src={image} alt="Slika mlade" loading='lazy' className="vjencanja-card-image" />
                     <div className="vjencanja-meta">
                         <h2>{title}</h2>
                         <p>{date}</p>

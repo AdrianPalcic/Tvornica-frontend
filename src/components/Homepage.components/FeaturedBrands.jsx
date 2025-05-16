@@ -5,9 +5,9 @@ import useFetch from '../../hook/useFetch'
 
 const FeaturedBrands = () => {
 
-    const API_URL = import.meta.env.VITE_API_URL
+    const apiUrl = import.meta.env.VITE_API_URL;
 
-    const { loading, error, data } = useFetch(`http://tvornica-backend.local//wp-json/wp/v2/posts?categories=7&_embed`)
+    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=7&_embed`)
 
     if (loading) return <div className='loading'>Loading...</div>
     if (error) return <div className='error'>Error: {error}</div>
@@ -24,7 +24,6 @@ const FeaturedBrands = () => {
             <div className="featured-brands-carousel-container">
                 {
                     posts.map((post) => {
-                        // Check if wp:featuredmedia is available for the post
                         const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
 
                         return (
@@ -38,7 +37,7 @@ const FeaturedBrands = () => {
                     })
                 }
             </div>
-            <button className='see-more'>Pročitajte više <ChevronRight size={18} /></button>
+            <a href='/ponude'><button className='see-more'>Pročitajte više <ChevronRight size={18} /></button></a>
         </div>
     )
 }

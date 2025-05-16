@@ -3,9 +3,9 @@ import FeaturedBlogsCard from '../cards/FeaturedBlogsCard'
 import { ChevronRight } from 'lucide-react'
 import useFetch from '../../hook/useFetch'
 const FeaturedBlogs = () => {
-    const API_URL = import.meta.env.VITE_API_URL
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=3&_embed`);
 
-    const { loading, error, data } = useFetch(`http://tvornica-backend.local//wp-json/wp/v2/posts?categories=3&_embed`)
 
     if (loading) return <div className='loading'>Loading...</div>
     if (error) return <div className='error'>Error: {error}</div>
@@ -103,8 +103,8 @@ const FeaturedBlogs = () => {
                     );
                 })}
             </div>
-            <button className='see-more'>Pogledajte više <ChevronRight size={18} /></button>
-        </div>
+            <a href="/blog"><button className='see-more'>Pogledajte više <ChevronRight size={18} /></button></a>
+        </div >
     )
 }
 

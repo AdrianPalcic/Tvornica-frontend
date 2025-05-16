@@ -1,12 +1,14 @@
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import useFetch from "../../hook/useFetch";
 import { useMemo } from "react";
 
 function PonudeBlogCTA() {
 
-    const API_URL = import.meta.env.VITE_API_URL;
-    const { loading, error, data } = useFetch(`http://tvornica-backend.local/wp-json/wp/v2/posts?categories=3&_embed`);
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=3&_embed`);
+    const navigate = useNavigate();
+
 
 
     const sortedBlogs = useMemo(() => {
@@ -44,30 +46,16 @@ function PonudeBlogCTA() {
         return htmlDecoded.replace(/<[^>]*>/g, '').trim();
     };
 
+    const handleNavigate = (tagName) => {
+        navigate('/blog', {
+            state: { preselectedCategory: tagName }
+        });
+    }
 
 
-    // Sample blog categories
-    const categories = [
-        { name: "Tutorials", count: 24, icon: BookOpen },
-        { name: "Industry News", count: 18, icon: Tag },
-        { name: "Case Studies", count: 12, icon: Clock },
-    ]
 
-    // Sample featured posts
-    const featuredPosts = [
-        {
-            title: "10 Essential Tips for Modern Web Development",
-            excerpt: "Learn the latest techniques and best practices for building modern web applications.",
-            image: "/tvornica-naslovna.jpg",
-            category: "Tutorials",
-        },
-        {
-            title: "How AI is Transforming Digital Marketing",
-            excerpt: "Discover how artificial intelligence is revolutionizing the way brands connect with customers.",
-            image: "/tvornica-naslovna.jpg",
-            category: "Industry News",
-        },
-    ]
+
+
 
     return (
         <section className="ponude-blog-cta-section">
@@ -105,6 +93,7 @@ function PonudeBlogCTA() {
                                                 src={featuredImage || "/placeholder.svg"}
                                                 alt={post.title.rendered}
                                                 className="ponude-blog-cta-post-image"
+                                                loading="lazy"
                                             />
                                         </div>
                                         <div className="ponude-blog-cta-post-content">
@@ -112,7 +101,7 @@ function PonudeBlogCTA() {
                                             <h4 className="ponude-blog-cta-post-title">{post.title.rendered}</h4>
                                             <p className="ponude-blog-cta-post-excerpt">{excerpt}</p>
                                             <div className="ponude-blog-cta-post-link-container">
-                                                <Link href="#" className="ponude-blog-cta-post-link">
+                                                <Link to={`/blog/${post.id}`} className="ponude-blog-cta-post-link">
                                                     Pročitajte više
                                                     <ArrowRight className="ponude-blog-cta-icon-small" />
                                                 </Link>
@@ -131,12 +120,12 @@ function PonudeBlogCTA() {
                             <h3 className="ponude-blog-cta-subtitle">Filtirajte po kategorijama</h3>
                             <div className="ponude-blog-cta-categories-list">
                                 {blogTags.map((tag, index) => (
-                                    <Link key={index} href="#" className="ponude-blog-cta-category-item">
+                                    <div key={index} onClick={() => handleNavigate(tag.name)} className="ponude-blog-cta-category-item">
                                         <div className="ponude-blog-cta-category-name">
                                             <span>{tag.name}</span>
                                         </div>
                                         <span className="ponude-blog-cta-category-count">{tag.count}</span>
-                                    </Link>
+                                    </div>
                                 ))}
                             </div>
 

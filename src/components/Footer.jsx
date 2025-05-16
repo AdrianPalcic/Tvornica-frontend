@@ -3,11 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import useFetch from '../hook/useFetch';
 
 const Footer = () => {
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     const navigate = useNavigate();
 
-    const { data: blogData } = useFetch(`http://tvornica-backend.local//wp-json/wp/v2/posts?categories=3&_embed`);
-    const { data: brandData } = useFetch(`http://tvornica-backend.local//wp-json/wp/v2/posts?categories=7&_embed`);
+    const { data: blogData } = useFetch(`${apiUrl}/posts?categories=3&_embed`);
+    const { data: brandData } = useFetch(`${apiUrl}/posts?categories=7&_embed`);
 
     const getBlogTags = () => {
         const allTags = [];
@@ -95,6 +96,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-links footer-links-last">
                     <ul>
+                        <li><Link to={"/besplatne-stvari"} >Besplatni sadržaj</Link></li>
                         <li><a href="https://facebook.com" target='_blank'>Facebook</a></li>
                         <li><a href="/cookies" target='_blank'>Kolačići</a></li>
                         <li><a href="/pp" target='_blank'>Politika Privatnosti</a></li>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const FeaturedBlogsCard = ({ title, image, excerpt, tags, date, id, readTime }) => {
     return (
         <Link to={`/blog/${id}`} className="featured-blog-card">
-            <img src={image}></img>
+            <img loading="lazy" src={image}></img>
             <div className="featured-blog-title">{title}</div>
             <div className="meta">
                 <div className="featured-blog-category"> <Tag size={18} />{tags}</div>

@@ -58,3 +58,22 @@
 .navbar .navbar-links a:hover {
     color: var(--color-primary);
 }
+
+.navbar .close-menu {
+    color: white;
+}
+
+@media (max-width:800px) {
+    .navbar .navbar-links {
+        display: none;
+    }
+
+    .navbar .menu-open {
+        display: flex;
+    }
+
+    .navbar .navbar-logo img {
+        width: 60px;
+        height: 60px;
+    }
+}

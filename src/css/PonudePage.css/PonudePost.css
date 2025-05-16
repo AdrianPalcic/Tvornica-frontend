@@ -1,0 +1,192 @@
+/* Base Styles */
+.ponude-post {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+}
+
+/* Tags Row */
+.tags-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.tag.lokacija {
+    background-color: #bf4da4;
+    color: white;
+}
+
+.tag.kategorija {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Title */
+.post-title {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+/* Address */
+.address-section {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Featured Image */
+.featured-image-container {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.featured-image {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Styling */
+.post-content {
+    max-width: 800px;
+    text-align: left;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.post-content h2 {
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1.5rem;
+    color: #1a1a1a;
+}
+
+
+/* Gallery */
+.wp-block-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.wp-block-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Google Maps */
+iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 0.4rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Visit Us Section */
+.visit-section {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+}
+
+.section-heading {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+    flex-basis: 200;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+}
+
+.contact-item.phone {
+    background-color: transparent;
+    border: 1px solid lightgray;
+    color: #333;
+}
+
+.contact-item.email {
+    background-color: transparent;
+    border: 1px solid lightgray;
+    color: #333;
+}
+
+.contact-item.website {
+    background-color: transparent;
+    border: 1px solid lightgray;
+    color: #333;
+}
+
+.contact-item.instagram {
+    background-color: #E1306C;
+}
+
+
+
+.contact-item.facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .wp-block-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    iframe {
+        height: 350px;
+    }
+}

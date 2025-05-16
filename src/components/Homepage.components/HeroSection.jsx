@@ -5,7 +5,9 @@ import useFetch from '../../hook/useFetch'
 
 const HeroSection = () => {
 
-    const { loading, error, data } = useFetch(`http://tvornica-backend.local//wp-json/wp/v2/posts?categories=3&_embed`);
+    const apiUrl = import.meta.env.VITE_API_URL;
+
+    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=3&_embed`);
 
     const blogs = data;
 

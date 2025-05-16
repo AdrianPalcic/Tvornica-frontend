@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const FeaturedBrandsCard = ({ title, image, id }) => {
     return (
         <Link to={`/ponude/${id}`} className="featured-brands-card">
-            <img src={image} alt="tvornica" />
+            <img src={image} alt="tvornica" loading="lazy" />
             <p className='brand-name'>{title}</p>
         </Link>
     )

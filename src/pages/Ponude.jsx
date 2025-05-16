@@ -9,8 +9,8 @@ import useFetch from '../hook/useFetch';
 import { useLocation } from "react-router-dom";
 
 const Ponude = () => {
-    const API_URL = import.meta.env.VITE_API_URL;
-    const { loading, error, data } = useFetch(`http://tvornica-backend.local/wp-json/wp/v2/posts?categories=7&_embed`)
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=7&_embed`)
     const location = useLocation()
 
     const [isLoading, setIsLoading] = useState(false);

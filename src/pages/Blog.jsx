@@ -8,11 +8,11 @@ import BlogCTA from '../components/BlogPage.components/BlogCTA';
 import useFetch from '../hook/useFetch';
 
 const Blog = () => {
-    const API_URL = import.meta.env.VITE_API_URL;
+    const apiUrl = import.meta.env.VITE_API_URL;
     const location = useLocation();
     const [activeCategory, setActiveCategory] = useState('Sve');
     const [searchQuery, setSearchQuery] = useState('');
-    const { loading, error, data } = useFetch(`http://tvornica-backend.local/wp-json/wp/v2/posts?categories=3&_embed`);
+    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=3&_embed`);
 
     // Check for preselected category from navigation
     useEffect(() => {
@@ -87,6 +87,43 @@ const Blog = () => {
 
     const sortedBlogs = filteredBlogs().sort((a, b) => new Date(b.date) - new Date(a.date));
 
+    /**
+* Calculates estimated read time for WordPress blog content
+* @param {string} htmlContent - The rendered HTML content from WordPress
+* @param {number} [wordsPerMinute=200] - Average reading speed (words per minute)
+* @param {number} [imageReadTime=12] - Seconds added per image (default 12s per Medium's formula)
+* @returns {Object} - Returns {minutes, seconds, totalSeconds, text}
+*/
+    function calculateReadTime(htmlContent, wordsPerMinute = 200, imageReadTime = 12) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlContent;
+
+        const texT = tempDiv.textContent || '';
+        const wordCount = texT.trim().split(/\s+/).length;
+
+        const imageCount = tempDiv.querySelectorAll('img').length;
+
+        const wordsTime = (wordCount / wordsPerMinute) * 60;
+        const imagesTime = imageCount * imageReadTime;
+        const totalSeconds = wordsTime + imagesTime;
+
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = Math.round(totalSeconds % 60);
+
+        const roundedMinutes = minutes < 1 ? 1 : minutes; // Nikad ne moze bit 0 minuta
+        const textSuffix = roundedMinutes === 1 ? 'min read' : 'min read';
+        const text = `${roundedMinutes} ${textSuffix}`;
+
+        return {
+            minutes: roundedMinutes,
+            seconds,
+            totalSeconds,
+            text,
+            wordCount,
+            imageCount
+        };
+    }
+
     return (
         <>
             <Header />
@@ -124,6 +161,8 @@ const Blog = () => {
                             day: 'numeric'
                         });
                         const authorName = blog._embedded?.author?.[0]?.name;
+                        const readingTime = calculateReadTime(blog?.content?.rendered);
+
 
                         return (
                             <BlogCard
@@ -134,7 +173,7 @@ const Blog = () => {
                                 date={date}
                                 excerpt={excerpt}
                                 tags={tags}
-                                author={authorName}
+                                readTime={readingTime.text}
                             />
                         );
                     })}

@@ -1,0 +1,160 @@
+/* Base Styles */
+:root {
+    --color-primary: #bf4da4;
+}
+
+.vjencanja-post {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Featured Image */
+.vjencanja-post .featured-image-container {
+    margin-bottom: 3rem;
+}
+
+.vjencanja-post .featured-image {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.vjencanja-post .post-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--color-primary);
+    margin: 0 auto 2rem;
+    max-width: 800px;
+    line-height: 1.2;
+}
+
+/* Content */
+.vjencanja-post .post-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.vjencanja-post .post-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.vjencanja-post .post-content p:first-of-type::first-letter {
+    float: left;
+    font-size: 3.5rem;
+    line-height: 0.8;
+    margin: 0.15em 0.1em 0 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Headings */
+.vjencanja-post .post-content h2,
+.vjencanja-post .post-content h3,
+.vjencanja-post .post-content h4 {
+    color: var(--color-primary);
+    margin: 2.5rem 0 1.5rem;
+}
+
+.vjencanja-post .post-content h2 {
+    font-size: 1.75rem;
+}
+
+/* Gallery */
+.vjencanja-post .wp-block-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.vjencanja-post .wp-block-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.vjencanja-post .wp-block-gallery img:hover {
+    transform: scale(1.02);
+}
+
+.vjencanja-post .wp-block-image img:not(.vjencanja-post .wp-block-gallery img, .vjencanja-post .featured-image-container .featured-image) {
+    width: 80%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    align-self: center;
+    justify-self: center;
+    border-radius: 6px;
+}
+
+.vjencanja-post .wp-block-media-text {
+    width: 80%;
+}
+
+.vjencanja-post .wp-block-media-text img {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
+.vjencanja-post .wp-block-media-text p {
+    all: unset;
+    padding: 10px 12px;
+    font-family: "Raleway", sans-serif;
+    opacity: 0.8;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .vjencanja-post .post-title {
+        font-size: 2rem;
+    }
+
+    .vjencanja-post .featured-image {
+        max-height: 50vh;
+    }
+
+    .vjencanja-post .wp-block-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .vjencanja-post .post-content p:first-of-type::first-letter {
+        font-size: 2.5rem;
+    }
+
+    .vjencanja-post .wp-block-media-text {
+        width: 100%;
+    }
+
+    .vjencanja-post .wp-block-image img:not(.vjencanja-post .wp-block-gallery img, .vjencanja-post .featured-image-container .featured-image) {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .vjencanja-post .post-title {
+        font-size: 1.8rem;
+    }
+
+    .vjencanja-post .wp-block-gallery {
+        grid-template-columns: 1fr;
+    }
+}
