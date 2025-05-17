@@ -6,6 +6,7 @@ import "../css/BlogPage.css/blogpage.css";
 import BlogCard from '../components/cards/BlogCard';
 import BlogCTA from '../components/BlogPage.components/BlogCTA';
 import useFetch from '../hook/useFetch';
+import { Helmet } from 'react-helmet';
 
 const Blog = () => {
     const apiUrl = import.meta.env.VITE_API_URL;
