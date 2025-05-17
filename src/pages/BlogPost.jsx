@@ -29,7 +29,7 @@ const BlogPost = () => {
 
     const title = blog?.title?.rendered || '';
     const description = blog?.excerpt?.rendered?.replace(/<[^>]+>/g, '') || '';
-    const url = `https://your-website.com/blog/${id}`; // Replace with your domain
+    const url = `https://tvornicavjencanja.hr/blog/${id}`; // Replace with your domain
 
     const {
         data: featuredPostsData,
