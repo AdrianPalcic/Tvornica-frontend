@@ -51,7 +51,7 @@ const VjencanjaPost = () => {
                 {blog?._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
                     <meta property="og:image" content={blog._embedded['wp:featuredmedia'][0].source_url} />
                 )}
-                <meta property="og:url" content={`https://tvornica.local/vjencanja/${blog?.id}`} />
+                <meta property="og:url" content={window.location.href} />
                 <meta property="og:type" content="article" />
 
                 {/* Twitter Card Meta Tags for Twitter */}
@@ -70,7 +70,7 @@ const VjencanjaPost = () => {
                 )}
 
                 {/* Canonical link */}
-                <link rel="canonical" href={`https://tvornica.local/vjencanja/${blog?.id}`} />
+                <link rel="canonical" href={window.location.href} />
             </Helmet>
 
 

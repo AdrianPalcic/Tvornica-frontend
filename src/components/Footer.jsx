@@ -97,7 +97,7 @@ const Footer = () => {
                 <div className="footer-links footer-links-last">
                     <ul>
                         <li><Link to={"/besplatne-stvari"} >Besplatni sadržaj</Link></li>
-                        <li><a href="https://facebook.com" target='_blank'>Facebook</a></li>
+                        <li><a href="https://web.facebook.com/groups/vjencanja" target='_blank'>Facebook</a></li>
                         <li><a href="/cookies" target='_blank'>Kolačići</a></li>
                         <li><a href="/pp" target='_blank'>Politika Privatnosti</a></li>
                     </ul>

@@ -126,6 +126,18 @@ const Blog = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Blog | Tvornica Vjenčanja</title>
+                <meta name="description" content="Pročitajte najnovije blogove o organizaciji vjenčanja, savjetima, trendovima i iskustvima mladenaca. Saznajte sve na jednom mjestu!" />
+                <meta name="keywords" content="blog o vjenčanjima, organizacija vjenčanja, savjeti za mladence, trendovi vjenčanja, vjenčani blog" />
+                <meta property="og:title" content="Blog | Tvornica Vjenčanja" />
+                <meta property="og:description" content="Inspiracije, savjeti i priče o vjenčanjima — pročitajte naš blog i pronađite ideje za vaš dan iz snova." />
+                <meta property="og:url" content="https://tvornicavjencanja.hr/blog" />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content="https://tvornicavjencanja.hr/wp/wp-content/uploads/2025/05/bride-hero-1024x685.jpg" />
+                <link rel="canonical" href="https://tvornicavjencanja.hr/blog" />
+            </Helmet>
+
             <Header />
             <div className="blog-container">
                 <h1>Naš Blog</h1>

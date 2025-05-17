@@ -53,6 +53,10 @@ function PonudeBlogCTA() {
     }
 
 
+    const linkStyle = {
+        color: "#bf4da4"
+    }
+
 
 
 
@@ -132,7 +136,7 @@ function PonudeBlogCTA() {
                             <div className="ponude-blog-cta-newsletter">
                                 <h4 className="ponude-blog-cta-newsletter-title">Nikada ne propustite novosti</h4>
                                 <p className="ponude-blog-cta-newsletter-text">
-                                    Pridružite se našoj facebook grupi
+                                    <a style={linkStyle} href="https://web.facebook.com/groups/vjencanja" target="_blank">Pridružite se našoj facebook grupi!</a>
                                 </p>
                                 <Link href="/blog" className="ponude-blog-cta-button">
                                     Pregledajte sve blogove

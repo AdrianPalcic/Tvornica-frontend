@@ -3,6 +3,7 @@ import useFetch from '../hook/useFetch';
 import Header from '../components/headers/Header';
 import Footer from '../components/Footer';
 import { FileText } from 'lucide-react';
+import { Helmet } from "react-helmet";
 
 const BesplatneStvari = () => {
     const apiUrl = import.meta.env.VITE_API_URL;
@@ -27,6 +28,27 @@ const BesplatneStvari = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Besplatni Materijali za Vjenčanja | Tvornica Vjenčanja</title>
+                <meta
+                    name="description"
+                    content="Preuzmite besplatne PDF materijale za planiranje vjenčanja – planer, budžet tablice, raspored dana i još mnogo toga. Organizirajte vjenčanje bez stresa!"
+                />
+                <meta
+                    name="keywords"
+                    content="besplatni materijali vjenčanje, planer vjenčanja, budžet vjenčanja, raspored vjenčanja, organizacija vjenčanja, wedding planner pdf"
+                />
+                <meta property="og:title" content="Besplatni Materijali za Vjenčanja | Tvornica Vjenčanja" />
+                <meta
+                    property="og:description"
+                    content="Preuzmite PDF vodiče, checkliste i planere za vaše savršeno organizirano vjenčanje."
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://tvornicavjencanja.hr/besplatne-stvari" />
+                <meta property="og:image" content="https://tvornicavjencanja.hr/wp/wp-content/uploads/2025/05/bride-hero-1024x685.jpg" />
+                <link rel="canonical" href="https://tvornicavjencanja.hr/besplatne-stvari" />
+            </Helmet>
+
             <Header />
             <div className="besplatni-sadrzaj">
                 <h1>Besplatni sadržaj</h1>

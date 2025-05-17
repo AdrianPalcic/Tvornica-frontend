@@ -1,17 +1,15 @@
-import TransparentHeader from '../components/headers/TransparentHeader'
-import VjencanjaHero from '../components/Vjencanja.components/VjencanjaHero'
-import "../css/Vjencanja.css/Vjencanja.css"
-import VjencanjaCard from '../components/cards/VjencanjaCard'
-import VjencanjaCTA from '../components/Vjencanja.components/VjencanjaCTA'
-import useFetch from '../hook/useFetch'
-import Footer from '../components/Footer'
-
+import { Helmet } from 'react-helmet';
+import TransparentHeader from '../components/headers/TransparentHeader';
+import VjencanjaHero from '../components/Vjencanja.components/VjencanjaHero';
+import "../css/Vjencanja.css/Vjencanja.css";
+import VjencanjaCard from '../components/cards/VjencanjaCard';
+import VjencanjaCTA from '../components/Vjencanja.components/VjencanjaCTA';
+import useFetch from '../hook/useFetch';
+import Footer from '../components/Footer';
 
 const Vjencanja = () => {
-
-    const apiUrl = import.meta.env.VITE_API_URL
-    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=8&_embed`)
-
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const { loading, error, data } = useFetch(`${apiUrl}/posts?categories=8&_embed`);
     const posts = data?.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const cleanExcerpt = (raw) => {
@@ -26,6 +24,26 @@ const Vjencanja = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Vjenčanja – Priče stvarnih parova | Tvornica Vjenčanja</title>
+                <meta name="description" content="Otkrijte inspirativne priče sretnih parova koji su koristili naše usluge za organizaciju svog vjenčanja. Pronađite ideje, savjete i dobavljače." />
+                <meta name="keywords" content="vjenčanja, priče mladenaca, blog vjenčanja, vjenčani dobavljači, iskustva mladenaca, inspiracija za vjenčanje" />
+                <meta name="robots" content="index, follow" />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:title" content="Vjenčanja – Priče stvarnih parova" />
+                <meta property="og:description" content="Inspirirajte se stvarnim pričama mladenaca i pronađite savršene dobavljače za svoje vjenčanje." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://tvornicavjencanja.hr/vjencanja" />
+                <meta property="og:image" content="https://tvornicavjencanja.hr/tvornica-naslovna.jpg" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Vjenčanja – Priče stvarnih parova" />
+                <meta name="twitter:description" content="Pregledajte priče stvarnih mladenaca i pronađite inspiraciju za svoje savršeno vjenčanje." />
+                <meta name="twitter:image" content="https://tvornicavjencanja.hr/tvornica-naslovna.jpg" />
+            </Helmet>
+
             <TransparentHeader />
             <VjencanjaHero />
             <div className="vjencanja-container">
@@ -56,7 +74,7 @@ const Vjencanja = () => {
             </div>
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default Vjencanja
+export default Vjencanja;

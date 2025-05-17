@@ -7,6 +7,7 @@ import PonudeBlogCTA from "../components/Ponude.components/PonudeBlogCTA";
 import Footer from '../components/Footer';
 import useFetch from '../hook/useFetch';
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Ponude = () => {
     const apiUrl = import.meta.env.VITE_API_URL;
@@ -119,6 +120,20 @@ const Ponude = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Ponude za Vjenčanja | Tvornica Vjenčanja</title>
+                <meta name="description" content="Otkrijte najbolje ponude za vaše vjenčanje. Filtrirajte prema lokaciji i kategoriji kako biste pronašli savršene dobavljače za vaš dan iz snova." />
+                <meta name="keywords" content="ponude za vjenčanja, vjenčani dobavljači, lokacije za vjenčanja, organizacija vjenčanja, kategorije vjenčanja" />
+                <meta property="og:title" content="Ponude za Vjenčanja | Tvornica Vjenčanja" />
+                <meta property="og:description" content="Istražite najpopularnije ponude i pronađite dobavljače za vaše vjenčanje." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://tvornicavjencanja.hr/ponude" />
+                <meta property="og:image" content="https://tvornicavjencanja.hr/tvornica-naslovna.jpg" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Ponude za Vjenčanja | Tvornica Vjenčanja" />
+                <meta name="twitter:description" content="Filtrirajte i pronađite idealne vjenčane ponude na jednom mjestu." />
+            </Helmet>
+
             <Header />
             <div className="ponude-container">
                 <h1>Naše Ponude</h1>
