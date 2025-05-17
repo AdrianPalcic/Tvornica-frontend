@@ -8,7 +8,6 @@ import VjencanjaCTA from '../components/Homepage.components/VjencanjaCTA'
 import VisitOnFacebook from '../components/Homepage.components/VisitOnFacebook'
 import Footer from '../components/Footer'
 import { Helmet } from 'react-helmet'
-import Reklama from "../components/Reklama"
 
 const Home = () => {
     return (
@@ -32,7 +31,6 @@ const Home = () => {
                 <VjencanjaCTA />
                 <FeaturedBrands />
                 <AboutUsSection />
-                <Reklama />
                 <VisitOnFacebook />
             </div>
             <Footer />
