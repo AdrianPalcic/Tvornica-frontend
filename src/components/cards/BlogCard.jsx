@@ -7,7 +7,7 @@ const BlogCard = ({ title, image, date, tags, excerpt, readTime, id }) => {
 
     return (
         <Link to={`/blog/${id}`} className="blog-card">
-            <img src={image} alt="Blog Post" className="blog-image" />
+            <img src={image} alt={title} className="blog-image" />
             <div className="blog-content">
                 <div className="blog-cat-label">{tags}</div>
                 <h2 className="blog-title">{title}</h2>

@@ -3,7 +3,7 @@ const AboutFullSection = () => {
     return (
         <div className="section-padding about-us-section">
             <div className="about-left">
-                <img src='/honeymoon (1).jpg' alt="About Us" className='about-us-image' loading="lazy" />
+                <img src='/honeymoon (1).jpg' alt="O Nama" className='about-us-image' loading="lazy" />
             </div>
             <div className="about-right">
                 <h2>O nama</h2>

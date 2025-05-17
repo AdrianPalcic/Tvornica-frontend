@@ -10,7 +10,7 @@ const VjencanjaCTA = () => {
                 <a href='/vjencanja'><button>Pročitajte više</button></a>
             </div>
             <div className="vjencanja-cta-image">
-                <img src="/isle-walk.png" alt="Vjenčanja" loading="lazy" />
+                <img src="/isle-walk.png" alt="Slika mlade i njenog oca kako idu prema oltaru" loading="lazy" />
             </div>
         </div>
     )
