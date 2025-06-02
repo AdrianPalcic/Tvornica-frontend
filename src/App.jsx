@@ -9,15 +9,19 @@ import Vjencanja from './pages/Vjencanja';
 import VjencanjaPost from './pages/VjencanjaPost';
 import BesplatneStvari from "./pages/BesplatneStvari"
 import { HelmetProvider } from 'react-helmet-async';
-
+import CookiePopup from './components/CookiePopup';
+import { useEffect } from 'react';
+import useNukeGoogleTranslateBar from './components/useNukeGoogleTranslateBar';
 
 function App() {
 
+  useNukeGoogleTranslateBar();
 
   return (
     <>
       <HelmetProvider>
         <BrowserRouter>
+          <CookiePopup />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

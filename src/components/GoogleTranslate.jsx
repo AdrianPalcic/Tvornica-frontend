@@ -1,6 +1,22 @@
 import { useEffect, useState, useRef } from "react";
 import Cookies from "js-cookie";
 
+// Utility function: removes the Google Translate banner and top offset
+function nukeGoogleBanner() {
+    // Remove the banner iframe and its parent, if exists
+    const bannerFrame = document.querySelector('iframe.goog-te-banner-frame');
+    if (bannerFrame) {
+        if (bannerFrame.parentNode) bannerFrame.parentNode.remove();
+        else bannerFrame.remove();
+    }
+    // Remove any weird top offset on the body
+    document.body.style.top = "0px";
+    // Remove elements with ids containing 'goog-' (extra cleanup)
+    document.querySelectorAll('[id*="goog-"]').forEach(el => {
+        el.style.display = 'none';
+    });
+}
+
 const LanguageSelector = () => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
@@ -23,11 +39,13 @@ const LanguageSelector = () => {
                 "google_translate_element"
             );
 
-            // Remove Google Translate banner
-            setTimeout(() => {
-                document.querySelector(".goog-te-banner-frame")?.remove();
-                document.body.style.top = "0px";
-            }, 500);
+            // Try nuking the banner every 200ms for 4 seconds on init
+            let tries = 0;
+            const interval = setInterval(() => {
+                nukeGoogleBanner();
+                tries++;
+                if (tries > 20) clearInterval(interval);
+            }, 200);
         };
 
         // Retrieve stored language preference
@@ -50,11 +68,7 @@ const LanguageSelector = () => {
         };
     }, []);
 
-    const toggleDropdown = (event) => {
-        event.stopPropagation();
-        setIsOpen((prev) => !prev);
-    };
-
+    // Whenever the language is changed, nuke the banner for a few seconds
     const changeLanguage = (lang) => {
         const select = document.querySelector(".goog-te-combo");
         if (select) {
@@ -64,6 +78,14 @@ const LanguageSelector = () => {
         Cookies.set("language", lang, { expires: 30 }); // Save language for 30 days
         setLanguage(lang);
         setIsOpen(false);
+
+        // Nuke banner after language change
+        let tries = 0;
+        const interval = setInterval(() => {
+            nukeGoogleBanner();
+            tries++;
+            if (tries > 20) clearInterval(interval);
+        }, 200);
     };
 
     const resetTranslation = () => {
@@ -76,7 +98,7 @@ const LanguageSelector = () => {
 
     return (
         <div className="language-selector" ref={dropdownRef}>
-            <button className="language-dropdown-button" onClick={toggleDropdown}>
+            <button className="language-dropdown-button" onClick={e => { e.stopPropagation(); setIsOpen(prev => !prev); }}>
                 {language.toUpperCase()} ▼
             </button>
 
@@ -87,7 +109,7 @@ const LanguageSelector = () => {
                 <button onClick={resetTranslation}>🔄 Hrvatski</button>
             </div>
 
-            {/* Hidden Google Translate */}
+            {/* Hidden Google Translate element */}
             <div id="google_translate_element" style={{ display: "none" }}></div>
         </div>
     );

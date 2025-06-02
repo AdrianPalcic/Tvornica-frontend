@@ -381,3 +381,67 @@ footer {
   border-radius: 10px;
 
 }
+
+
+.cookie-popup {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  padding: 16px 24px;
+  z-index: 9999;
+  max-width: 90vw;
+  min-width: 280px;
+}
+
+.cookie-popup-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cookie-popup-btn {
+  background: var(--color-primary);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font: inherit;
+  transition: background 0.2s;
+}
+
+.cookie-popup-btn:hover {
+  background: var(--color-secondary);
+}
+
+
+/* Hide Google Translate top banner */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* Prevent body from being pushed down by banner */
+body {
+  top: 0px !important;
+}
+
+/* Sometimes Google adds a body padding, remove it */
+body .skiptranslate {
+  padding-top: 0 !important;
+}
+
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
