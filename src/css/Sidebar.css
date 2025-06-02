@@ -189,14 +189,13 @@
     }
 }
 
-.menu-open {
+.menu-div {
     display: none;
-    /* Hide hamburger on desktop */
 }
 
 @media (max-width: 900px) {
-    .menu-open {
-        display: block;
+    .menu-div {
+        display: flex;
         color: var(--color-primary)
             /* Show on mobile */
             /* (your styling here) */

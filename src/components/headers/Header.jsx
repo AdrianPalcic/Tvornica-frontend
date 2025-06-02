@@ -57,7 +57,10 @@ const Header = () => {
                         Kontakt
                     </NavLink>
                 </div>
-                <Menu className='menu-open' onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+                <div className='menu-div'>
+                    <LanguageSelector />
+                    <Menu className='menu-open' onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+                </div>
             </div>
             {isSidebarOpen ? <Sidebar isOpen={isSidebarOpen} closeSidebar={() => setIsSidebarOpen(false)} /> : ""}
         </>
